@@ -1,13 +1,15 @@
 pragma solidity >=0.4.21 <0.7.0;
 
+
 contract SimpleStorage {
-  uint storedData;
+    uint256 storedData;
+    address public manager = msg.sender;
 
-  function set(uint x) public {
-    storedData = x;
-  }
+    function set() public {
+        storedData++;
+    }
 
-  function get() public view returns (uint) {
-    return storedData;
-  }
+    function get() public view returns (uint256) {
+        return storedData;
+    }
 }
